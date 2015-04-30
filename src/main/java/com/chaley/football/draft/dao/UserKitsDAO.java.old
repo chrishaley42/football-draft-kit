@@ -1,0 +1,29 @@
+package com.chaley.football.draft.dao;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+
+import javax.persistence.Query;
+
+import com.chaley.football.draft.model.UserKit;
+
+public class UserKitsDAO {
+	private EntityManager em;
+	
+	public UserKitsDAO(EntityManager em) {
+		this.em = em;
+	}
+	
+	public void persist(UserKit entity) {
+		em.persist(entity);
+	}
+	
+	@SuppressWarnings("unchecked")
+	public List<UserKit> getUserKits(Long userId) {
+		Query query = em.createQuery("select UserKit from UserKit userKit where userKit.userId = :userId");
+		query.setParameter("userId",userId);
+		
+		return query.getResultList();
+	}
+}

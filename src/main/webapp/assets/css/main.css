@@ -1,0 +1,101 @@
+#status { display: none; }
+
+table.tablesorter thead tr .header {
+  background-image: url(../img/bg.gif);
+  background-repeat: no-repeat;
+  background-position: center right;
+  cursor: pointer;
+}
+
+table.tablesorter thead tr .headerSortUp {
+  background-image: url(../img/asc.gif);
+}
+
+table.tablesorter thead tr .headerSortDown {
+  background-image: url(../img/desc.gif);
+}
+
+.navbar {
+  z-index: 50;
+  position: relative;
+}
+.navbar .container {
+  max-width: 940px;
+}
+
+.navbar .navbar-form .btn-group {
+  margin-top: 0;
+} 
+
+#filter-fields {
+  min-width: 180px;
+}
+
+#spinner {
+  display: none;
+  margin-top: 5px;
+}
+
+#results {
+  margin-left: 0;
+}
+
+#results table {
+  table-layout: fixed;
+  word-wrap: break-word;
+}
+
+.input-append, .input-prepend {
+  margin-bottom: 0px;
+}
+
+/*
+override width constraint
+*/
+.maxwide {
+  width: 98%;
+}
+
+.navbar [class^="icon-"], .navbar [class*=" icon-"] {
+  margin-top: 4px;
+}
+
+.table thead th:not(:first-child) {
+  padding-left: 5px !important;
+}
+
+.table thead th:not(:last-child) {
+  border-right: 1px solid #ddd;
+}
+
+.savedresults {
+  margin-top: -20px;
+  margin-bottom: 10px;
+  z-index: 10;
+  position: relative;
+
+  min-width: 940px;
+  padding: 5px 15px;
+
+  border: 1px solid rgba(0,0,0,0.1);
+  border-top: 0px;
+
+  border-radius: 4px;
+}
+
+.savedroller {
+  position: absolute;
+  bottom: 4px;
+  left: 463px;
+
+  height: 10px;
+}
+
+input[type="radio"] {
+  display: inline-block;
+  margin: -5px 10px 0 0;
+}
+
+.radio-label {
+  display: inline;
+}
