@@ -8,8 +8,11 @@
 Vagrant.configure(2) do |config|
 
   # Enable proxy if needed
-  #config.proxy.http = 'http://username:password@proxy_path:8080/'
-  #config.proxy.no_proxy = 'localhost,127.0.0.1'
+  if ENV['HTTP_PROXY']
+    # Enabling proxy if needed
+    config.proxy.http = ENV['HTTP_PROXY']
+    config.proxy.no_proxy = 'localhost,127.0.0.1'
+  end
 
   config.vm.box = "precise32"
 
@@ -22,6 +25,9 @@ Vagrant.configure(2) do |config|
   # within the machine from a port on the host machine. In the example below,
   # accessing "localhost:8080" will access port 80 on the guest machine.
   config.vm.network "forwarded_port", guest: 80, host: 8082
+
+  config.vm.synced_folder "#{ENV['HOME']}/.m2/", "/root/.m2", id: "m2-settings"
+  config.vm.synced_folder "#{ENV['HOME']}/.m2/repository", "/usr/local/m2/repository", id: "m2-repo"
 
   # Share an additional folder to the guest VM. The first argument is
   # the path on the host to the actual folder. The second argument is

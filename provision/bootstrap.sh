@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-
-
 # Install mysql
 if [ ! -e /etc/init/mysql.conf ]; then
   apt-get update --fix-missing
