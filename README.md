@@ -1,1 +1,4 @@
-# football-draft-kit 
+# football-draft-kit
+
+vagrant box add \
+  precise64 http://files.vagrantup.com/precise64.box 

@@ -14,7 +14,8 @@ Vagrant.configure(2) do |config|
     config.proxy.no_proxy = 'localhost,127.0.0.1'
   end
 
-  config.vm.box = "precise32"
+  config.vm.box_url = "http://files.vagrantup.com/precise64.box"
+  config.vm.box = "precise64"
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
