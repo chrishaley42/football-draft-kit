@@ -1,0 +1,7 @@
+---
+
+http_port: 80
+domain: football.draft.com
+football_dir: /opt/football
+football_libs: ../build/libs
+football_jar: gs-spring-boot-0.1.0.jar

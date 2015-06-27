@@ -66,5 +66,11 @@ Vagrant.configure(2) do |config|
   #   sudo apt-get update
   #   sudo apt-get install -y apache2
   # SHELL
-  config.vm.provision :shell, :path => "provision/bootstrap.sh"
+  #config.vm.provision :shell, :path => "provision/bootstrap.sh"
+  config.vm.provision :ansible do |ansible|
+      ansible.groups = {
+        "localhost" => ["localhost"]
+      }
+      ansible.playbook = "provision/playbook.yml"
+    end
 end

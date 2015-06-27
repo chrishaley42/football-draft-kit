@@ -1,0 +1,14 @@
+---
+- name: install mysql
+  apt: name=mysql-server state=present
+- name: install pip
+  apt: pkg=python-pip state=installed
+
+- name: install mysqldb
+  apt: pkg=python-mysqldb state=installed
+
+- name: Create database user
+  mysql_user: user=football password=12345 priv=*.*:ALL state=present
+
+- name: Create database
+  mysql_db: db=football state=present

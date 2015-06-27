@@ -1,0 +1,13 @@
+---
+- name: create superlist directory
+  file: path={{football_dir}} state=directory
+
+- name: copy superlist jar
+  copy: src={{football_libs}}/{{football_jar}}
+        dest={{football_dir}}/{{football_jar}}
+
+- name: generate upstart script
+  template: src=football.conf dest=/etc/init/football.conf
+
+- name: launch service
+  service: name=football state=started
